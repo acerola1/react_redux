@@ -12,6 +12,7 @@ import {Provider} from 'react-redux';
 import { Router, browserHistory } from 'react-router'; // Router Component handles routing. Use HTML5 Push State to handle browserHistory with clean URLs.
 import routes from './routes';
 import {loadCourses} from './actions/courseActions';
+import {loadAuthors} from "./actions/authorActions";
 
 // Style dependencies from App Endpoint
 require('./favicon.ico'); // Webpack loads favicon.ico
@@ -20,6 +21,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 const store = configureStore();
 store.dispatch(loadCourses());
+store.dispatch(loadAuthors());
 
 render(
   <Provider store={store}>
